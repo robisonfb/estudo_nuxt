@@ -13,6 +13,9 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script:[
+      { src : 'cdn/script.js' } //test load script external
     ]
   },
 
@@ -35,8 +38,14 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios',
   ],
-
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    baseURL: '/',
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
